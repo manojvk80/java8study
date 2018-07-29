@@ -14,7 +14,7 @@ import java.util.function.Function;
  * Has andThen and compose methods which are used to chain methods calls
  * Has identity() function which is related to Monads in functional programming - See this  TODO
  * <p>
- * No need to write function from scratch every time.
+ * No need to write function from scratch every time. Example of practical use of function is map method in Streams
  */
 public class FunctionExample {
 
@@ -52,7 +52,7 @@ public class FunctionExample {
         for (int i = 0; i < 10; i++) {
             stringList.add("Test" + i);
         }
-        stringList.stream().forEach(findWordCount::apply);
+        stringList.stream().map(findWordCount::apply);
     }
 
     // Note: If you have a method that takes more that one input, it cannot be represented by Function
@@ -81,7 +81,7 @@ public class FunctionExample {
         for (int i = 0; i < 10; i++) {
             stringList.add(i);
         }
-        stringList.stream().forEach(integerToStringFunction::apply);
+        stringList.stream().map(integerToStringFunction::apply);
     }
 
     // Function chaining

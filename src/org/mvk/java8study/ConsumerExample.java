@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
  * It is an interface in java.util.function. Has one method to implement.
  *  void accept(T t);
  * Consumer operates on t and create side effects - meaning it calls some other methods using values in t ot simply mutates t
+ * Example of a consumer in practice is forEach method (it takes a consumer as input)
  */
 public class ConsumerExample {
     public static void main(String args[]) {

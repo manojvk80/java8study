@@ -22,6 +22,7 @@ public class LambdaExample {
     }
 
     public LambdaExample() {
+
         // Create a predicate
         Predicate<String> keyWordChecker = new Predicate<String>() {
             @Override
@@ -34,7 +35,7 @@ public class LambdaExample {
         // Read it as: For input attribute t, apply t.contains("MyKeyWord") and return its output value
         // How will compiler understand the type of t? - Depends on the context in which it is used
         // How will compiler know that this should be treated as a Predicate? -> Depends on the return type. Here boolean is returned which is compatible with Predicate
-        // If nothing is returned, JVM will implicitly convert lambda to a Consumer
+        // If nothing is returned and if the context permits, JVM will implicitly convert lambda to a Consumer
         Consumer<String> aStringConsumer = t -> System.out.println(t);
 
         // Regular operations are treated as implicit return value. So below lambda takes an input type and returns a String. So JVM treat this as Function
@@ -61,7 +62,17 @@ public class LambdaExample {
                 return Calendar.getInstance().getTime();
             }
         };
-        Supplier<Date> dateSupplier2 = () -> Calendar.getInstance().getTime();
+        Supplier<Date> dateSupplierLambda = () -> Calendar.getInstance().getTime();
+
+        //Lambda expression for Runnable
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Run something here");
+            }
+        };
+        Runnable runnableLambda = () -> System.out.println("Run something here");
+
 
     }
 }
