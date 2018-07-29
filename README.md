@@ -1,6 +1,6 @@
-##Study project to understand features added in Java 8
+## Study project to understand features added in Java 8
 
-###FunctionalInterface
+### FunctionalInterface
  An interface that contains only one abstract method is called a functional interface. 
  A functional interface can have any number of default methods. 
  Runnable, ActionListener, Comparable are some of the examples of functional interfaces.
@@ -36,7 +36,7 @@
   
   All of these interfaces support chaining so that we can build fluent style code
   
-####:: Lambda expression
+#### Lambda expression
 Lambda expression let's us pass code as arguments in a concise way, eliminating the need to write anonymous inner classes. Think of lambdas as a way of coding a "behaviour" that can be passed around.
 A lambda expression do not have a name, but can accept parameters, has a return type, has a body and can also throw exceptions (consider a regular java method without a name)
 A lambda expression can be used where a Function Interface is expected provided the lambda expression has the same signature as the abstract method of the function interface (not just Predicate, Consumer or any of the newer ones, but also the old ones like Comparator, Runnable etc)
@@ -45,13 +45,13 @@ For example, a lambda expression for a simple comparator: (a, b) -> a - b OR (Em
 
 Refer _org.mvk.java8study.LambdaExample_ 
 
-####:: Putting concepts together - Enabling functional programming
+#### Putting concepts together - Enabling functional programming
 FunctionInterface annotation forces you to have only one abstract method. This can then be implemented using lambda. This will force us to create a lot of function
 interfaces. To avoid that Java pre-built generic interfaces as Predicate, Consumer, Function etc. 
 For efficiency (avoid auto-boxing), there are functional interfaces for primitives like IntPredicate, IntConsumer, IntFunction etc
   
 
-####:: operator 
+#### :: operator 
 Double colon operator is used for method referencing. We can extract static methods from classes by using it or methods from objects. The same operator can be used even for constructors.
 
 Example: MyDate::isWeekend or myDate::isMonday  
@@ -61,20 +61,20 @@ A method reference is the shorthand syntax for a lambda expression that executes
 Tip: Instead of using AN ANONYMOUS CLASS you can use A LAMBDA EXPRESSION. And if this just calls one method, you can use A METHOD REFERENCE
 
 
-###Streams
+### Streams
 Streams lets you apply transformations on a collection in a concise and efficient way (parallel processing using multiple cpu cores)
  
 Refer _org.mvk.java8study.StreamExample_
 
 
-###Optional
+### Optional
 TODO
 
-###New Date and Time APIs
+### New Date and Time APIs
 TODO
 
-###Default
+### Default
 TODO
 
-###CompletableFuture
+### CompletableFuture
 TODO
